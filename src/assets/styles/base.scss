@@ -1,0 +1,693 @@
+@for $i from 1 through 200 {
+  .m-#{$i} {
+    margin: (1px * $i);
+  }
+
+  .m-t-#{$i} {
+    margin-top: (1px * $i);
+  }
+
+  .m-r-#{$i} {
+    margin-right: (1px * $i);
+  }
+
+  .m-b-#{$i} {
+    margin-bottom: (1px * $i);
+  }
+
+  .m-l-#{$i} {
+    margin-left: (1px * $i);
+  }
+
+  .p-#{$i} {
+    padding: (1px * $i);
+  }
+
+  .p-t-#{$i} {
+    padding-top: (1px * $i);
+  }
+
+  .p-r-#{$i} {
+    padding-right: (1px * $i);
+  }
+
+  .p-b-#{$i} {
+    padding-bottom: (1px * $i);
+  }
+
+  .p-l-#{$i} {
+    padding-left: (1px * $i);
+  }
+}
+
+@each $var in (left, center, right) {
+  .tx-#{$var} {
+    text-align: $var;
+  }
+}
+
+@each $var in (left, right) {
+  .float-#{$var} {
+    float: $var;
+  }
+}
+
+@mixin font($size: 12px) {
+  font-size: 1px * $size;
+}
+
+@mixin bg($color) {
+  background: $color;
+}
+
+@mixin wh($width: auto, $height: auto) {
+  width: 1px * $width;
+  height: 1px * $height;
+}
+
+@mixin wh100() {
+  width: 100%;
+  height: 100%;
+}
+
+@mixin color($color) {
+  color: $color;
+}
+
+@mixin flex($p: space-between, $a: stretch) {
+  display: flex;
+  justify-content: $p;
+  align-items: $a;
+}
+
+@mixin inline() {
+  display: inline-block;
+}
+
+// 详情公共头部背景
+.common {
+  border: 1px solid #d9d9d9;
+
+  .title {
+    height: 40px;
+    border-bottom: 1px solid #d9d9d9;
+    line-height: 40px;
+    @include color(#8c8c8c);
+    @include font(16);
+    @include bg(rgba(245, 245, 245, 0.96));
+  }
+}
+
+// 头部面包屑
+.bread {
+  @include flex(felx-start, center);
+
+  span {
+    @include flex(flex-start, center);
+    @include color(#8c8c8c);
+    cursor: pointer;
+
+    &:last-child {
+      @include color(#595959);
+      cursor: default;
+    }
+  }
+
+  .bread-long {
+    display: inline-block;
+    width: 130px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+
+// 超n行省略号
+@mixin ellipsis($n) {
+  width: 100%; //宽度
+  overflow: hidden; //超出文本隐藏
+  text-overflow: ellipsis; ///超出部分省略号显示
+  display: -webkit-box; //弹性盒模型
+  -webkit-box-orient: vertical; //上下垂直
+  -webkit-line-clamp: $n; //自定义行数
+}
+
+// 超n行省略号
+@mixin ellipsisTxt() {
+  overflow: hidden; //超出文本隐藏
+  text-overflow: ellipsis; ///超出部分省略号显示
+  white-space: nowrap;
+}
+
+::v-deep .vjs_video_3-dimensions.vjs-fluid {
+  height: 100%;
+  padding-top: 0;
+}
+
+// 专业需求相关
+.flow-common {
+  .title {
+    @include color(#262626);
+    @include font(16);
+    font-family: 'PingFang-Bold';
+    font-weight: bold;
+
+    .budget_input {
+      color: #136dea;
+
+      ::v-deep.el-input {
+        width: 48px;
+        margin: 0 10px;
+
+        .el-input__inner {
+          border-color: #136dea;
+          height: 24px;
+          border-radius: 0;
+          line-height: 24px;
+          text-align: center;
+          color: #136dea;
+          padding: 0 5px;
+        }
+      }
+    }
+  }
+
+  .types {
+    @include flex(flex-start, center);
+    flex-flow: wrap;
+
+    li {
+      margin-right: 100px;
+      border: 1px solid #f0f0f0;
+      border-radius: 4px;
+      @include wh(104, 104);
+      @include flex(center, center);
+      flex-direction: column;
+      cursor: pointer;
+
+      &.active {
+        border: 1px solid #136dea;
+
+        p {
+          @include color(#136dea);
+        }
+
+        .p-common {
+          background: #136dea;
+          @include color(#fff);
+        }
+      }
+
+      &.othertypes {
+        justify-content: flex-start;
+
+        img {
+          width: 100%;
+          height: calc(100% - 30px);
+          border-top-right-radius: 4px;
+          border-top-left-radius: 4px;
+        }
+      }
+
+      img {
+        width: 50px;
+        height: 50px;
+      }
+
+      p {
+        @include color(#8c8c8c);
+      }
+    }
+
+    .types-common {
+      @include wh(120, 140);
+      @include bg(#f0f0f0);
+      position: relative;
+
+      p {
+        height: 30px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        @include bg(rgba(0, 0, 0, 0.4));
+        @include flex(center, center);
+        @include color(#fff);
+        border-radius: 0px 0px 4px 4px;
+      }
+    }
+
+    &.firstTypeUl {
+      .active {
+        @include bg(#e7f0fd);
+        transform: all 0.3s;
+        border: 0;
+
+        p {
+          @include color(#136dea);
+        }
+
+        .p-common {
+          background: #136dea;
+          @include color(#fff);
+        }
+      }
+    }
+  }
+
+  .des {
+    @include color(#595959);
+  }
+
+  .time {
+    @include flex(flex-start, center);
+
+    p {
+      @include wh(100, 30);
+      @include flex(center, center);
+      @include color(#595959);
+      border: 1px solid #f0f0f0;
+      border-radius: 2px;
+      cursor: pointer;
+      margin-right: 20px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    .active {
+      @include color(#fff);
+      @include bg(#136dea);
+    }
+  }
+
+  .title-more {
+    @include flex;
+
+    div {
+      p {
+        @include color(#8c8c8c);
+        @include font(12);
+      }
+    }
+  }
+
+  &.dialog {
+    .loading_nomore {
+      text-align: center;
+      color: #cccccc;
+      padding-top: 10px;
+      width: 100%;
+    }
+
+    .plan {
+      .list {
+        width: 100%;
+        min-height: 340px;
+        max-height: 340px;
+        overflow: auto;
+
+        /*滚动条大小*/
+        &::-webkit-scrollbar {
+          width: 8px;
+          height: 10px;
+        }
+
+        /*正常情况下滑块的样式*/
+        &::-webkit-scrollbar-thumb {
+          background-color: rgba(0, 0, 0, 0.05);
+          border-radius: 10px;
+          -webkit-box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        /*鼠标悬浮在该类指向的控件上时滑块的样式*/
+        &:hover::-webkit-scrollbar-thumb {
+          background-color: rgba(0, 0, 0, 0.2);
+          border-radius: 10px;
+          -webkit-box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        /*鼠标悬浮在滑块上时滑块的样式*/
+        &::-webkit-scrollbar-thumb:hover {
+          background-color: rgba(0, 0, 0, 0.4);
+          -webkit-box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        /*正常时候的主干部分*/
+        &::-webkit-scrollbar-track {
+          border-radius: 10px;
+          -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
+          background-color: white;
+        }
+
+        /*鼠标悬浮在滚动条上的主干部分*/
+        &::-webkit-scrollbar-track:hover {
+          -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.4);
+          background-color: rgba(0, 0, 0, 0.01);
+        }
+
+        .team-li {
+          .person {}
+        }
+
+        .plan-li {
+          margin-right: 20px;
+          margin-top: 20px;
+
+          &:nth-child(3n + 0) {
+            margin-right: 20px;
+          }
+
+          &:nth-child(6n + 0) {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .plan {
+    @include flex;
+
+    &.caseList {
+      ::v-deep .el-carousel__container {
+        height: 100%;
+
+        .el-carousel__arrow {
+          height: 32px;
+          width: 18px;
+          border-radius: 2px;
+
+          &.el-carousel__arrow--left {
+            left: 0;
+            top: 33%;
+          }
+
+          &.el-carousel__arrow--right {
+            right: 0;
+            top: 33%;
+          }
+        }
+
+        .el-carousel__item {
+          padding: 0 48px;
+        }
+
+        .case3List {
+          height: 100%;
+          @include flex(flex-start, center);
+
+          li {
+            cursor: pointer;
+            width: calc(33.3% - 29px);
+            margin-right: 40px;
+            height: 100%;
+
+            .vjs-custom-skin>.video-js {
+              height: 130px !important;
+              padding: 0 !important;
+              border-radius: 4px !important;
+            }
+
+            .vjs-poster {
+              border-radius: 4px !important;
+            }
+
+            .vjs-custom-skin>.video-js .vjs-control {
+              width: 2.4em;
+            }
+
+            .case_info {
+              p {
+                &:first-child {
+                  color: #262626;
+                  margin: 10px 0 16px 0;
+                  font-family: 'PingFang-Bold';
+                }
+
+                &:last-child {
+                  color: #8c8c8c;
+                  font-size: 12px;
+                }
+              }
+            }
+
+            .img_bg {
+              display: flex;
+              flex-direction: row;
+              overflow: hidden;
+              flex-wrap: wrap;
+              width: 100%;
+
+              .waller-outer {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                ::v-deep .el-image_inner {
+                  min-width: 120px;
+                  min-height: 120px;
+                }
+              }
+            }
+
+            img {}
+
+            &:nth-child(3n + 0) {
+              margin-right: 0;
+            }
+          }
+        }
+      }
+    }
+
+    .list {
+      display: flex;
+      flex-flow: wrap;
+
+      &.user_list {
+        .plan-li {
+          &:nth-child(3n + 0) {
+            margin-right: 40px;
+          }
+        }
+      }
+
+      &.shop_list {
+        .team-li {
+          .person {
+            li {
+              p {
+                &:nth-child(2) {
+                  @include color(#333);
+                  @include ellipsis(2);
+                  max-width: none;
+                  white-space: inherit;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .plan-li {
+      cursor: pointer;
+      @include wh(132, 152);
+      border-radius: 8px;
+      border: 1px solid #f0f0f0;
+      margin-right: 40px;
+
+      .user_info {
+        text-align: center;
+        height: 100%;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+
+        span {
+          display: block;
+        }
+
+        span:first-child {
+          margin: 0 auto;
+          position: relative;
+          @include wh(50, 50);
+          border-radius: 50%;
+
+          &:hover {
+            box-shadow: 0px 0px 12px 0px rgba(140, 140, 140, 0.5);
+          }
+
+          img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+          }
+        }
+
+        span:last-child {
+          @include ellipsisTxt;
+          max-width: 84px;
+          color: #8c8c8c;
+          font-size: 12px;
+        }
+      }
+
+      &:nth-child(3n + 0) {
+        margin-right: 0;
+      }
+
+      .icon {
+        display: none;
+      }
+    }
+
+    .team-li {
+      margin-right: 30px;
+
+      &:nth-child(6n + 0) {
+        margin-right: 0;
+      }
+
+      @include wh(340, 210);
+
+      .head {
+        @include flex(flex-start);
+
+        .head-img {
+          @include wh(50, 50);
+
+          img {
+            width: 100%;
+            height: 100%;
+            border-radius: 4px;
+          }
+        }
+
+        .self {
+          p {
+            &:first-child {
+              @include color(#242424);
+              font-weight: 500;
+            }
+
+            &:nth-child(2) {
+              // height: 40px;
+              @include color(#8c8c8c);
+            }
+          }
+        }
+      }
+
+      .person {
+        @include flex(flex-start, flex-start);
+
+        &.shop_person {
+          li {
+            margin-right: 20px;
+          }
+        }
+
+        li {
+          display: flex;
+          flex-flow: column;
+          align-items: center;
+          margin-right: 15px;
+          min-width: 90px;
+          max-width: 90px;
+
+          &:last-child {
+            margin-right: 0;
+          }
+
+          p {
+            &:first-child {
+              @include wh(50, 50);
+              border-radius: 50%;
+
+              &:hover {
+                box-shadow: 0px 0px 12px 0px rgba(140, 140, 140, 0.5);
+              }
+
+              &.goods_img {
+                @include wh(94, 58);
+              }
+
+              img {
+                width: 100%;
+                height: 100%;
+                border-radius: 8px;
+              }
+            }
+
+            &:nth-child(2) {
+              @include color(#333);
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              max-width: 60px;
+              /* @include ellipsis(2);
+               max-width: none;
+               white-space: inherit;*/
+            }
+
+            &:nth-child(3) {
+              font-size: 12px;
+              @include color(#8c8c8c);
+              overflow: hidden;
+              max-width: 90px;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+            }
+          }
+        }
+      }
+    }
+
+    .active {
+      border: 1px solid #136dea;
+      position: relative;
+      overflow: hidden;
+
+      .icon {
+        display: inline-block;
+        @include wh(44, 44);
+        @include bg(#136dea);
+        border-radius: 50%;
+        position: absolute;
+        right: -20px;
+        top: -20px;
+
+        i {
+          @include color(#fff);
+          position: absolute;
+          left: 8px;
+          bottom: 8px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+// title-line 竖线
+.title-line {
+  @include color(#242424);
+  @include font(20);
+  padding-left: 20px;
+  position: relative;
+
+  &:before {
+    content: '';
+    @include bg(#136eda);
+    @include wh(4, 20);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0px;
+  }
+}

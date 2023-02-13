@@ -1,0 +1,71 @@
+$showCtnWidth: 86%;
+$showCtnminWidth: 94%;
+$white: #fff;
+$color-dominant: #026dff; //系统主题颜色主色
+$color-pagination-btn: #f4f4f5; //分页按钮颜色
+
+/*********************表格通用样式*****************************/
+
+//表头高度
+.el-table th.el-table__cell {
+  padding: 0;
+  line-height: 48px;
+  height: 48px;
+}
+
+//表行高度
+.el-table td.el-table__cell {
+  padding: 0;
+  line-height: 48px;
+  height: 48px;
+}
+
+tr.hover-row>td.el-table__cell,
+.el-table--enable-row-hover tr:hover>td.el-table__cell {
+  background: #E8F3FF !important;
+}
+
+.el-table__expand-icon .el-icon-arrow-right:before {
+  content: '\e791';
+}
+
+/*********************表格边框样式*****************************/
+
+// 表头里面边框
+.el-table thead.is-group th.el-table__cell {
+  //border-bottom: none !important;
+  border: none !important;
+}
+
+//表主体body
+.el-table--border .el-table__cell {
+  border-right: none !important;
+}
+
+//从业人员，车辆台帐表格最外层边框
+.el-table.el-table--fit.el-table--border.el-table--group.el-table--enable-row-hover.el-table--enable-row-transition {
+  border: none !important;
+}
+
+//车辆保险表格最外层边框
+.el-table.el-table--fit.el-table--border.el-table--group.el-table--enable-row-hover {
+  border: none !important;
+}
+
+//交通事故表格最外层边框
+.el-table.el-table--fit.el-table--border.el-table--group {
+  border: none !important;
+}
+
+.el-table--border:after,
+.el-table--group:after {
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 0 !important;
+}
+
+/*********************表格边框样式*****************************/
+.mb22 {
+  margin-bottom: 22px;
+}

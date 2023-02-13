@@ -1,0 +1,67 @@
+// 表单输入框的样式 START
+@mixin el-form {
+    ::v-deep.el-form {
+        border-bottom: 1px solid rgba(207, 213, 222, .3);
+        .el-form-item {
+            // margin-right: 30px;
+            .el-form-item__label {
+                line-height: 36PX;
+                font-size: 14px;
+                font-weight: 400;
+                color: #606266;
+            }
+            .el-form-item__content {
+                .el-input {
+                    .el-input__inner {
+                        height: 36px;
+                    }
+                }
+            }
+            &.search-btn {
+            .el-form-item__content {
+                .el-button {
+                    width: 100px;
+                    height: 36px;
+                    border-radius: 4px;
+                    &.el-button--primary {
+                        background: #026DFF;
+                        color: #fff;
+                    }
+                    &.el-button--default {
+                        background: #fff;
+                        color: #026DFF;
+                        border: 1px solid #026DFF;
+                    }
+                }
+            }
+        }
+        }
+    }
+}
+// 表单输入框的样式 END
+
+// 查询、重置按钮 START
+@mixin handle-group {
+    .handle-group {
+        padding: 9px 0 12px;
+        .el-button {
+            min-width: 88px;
+            box-sizing: border-box;
+            padding: 0 10px;
+            height: 30px;
+            background: #ECF5FF;
+            border-radius: 4px;
+            border: 1px solid #B3D8FF;
+            color: #419EFF;
+                .tyicon {
+                    font-size: 14px !important;
+                    line-height: 30px;
+                }
+                .btn-text {
+                  position: relative;
+                  top: -2px;
+                }
+        }
+      }
+}
+// 查询、重置按钮 END

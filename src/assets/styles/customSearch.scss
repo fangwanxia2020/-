@@ -1,0 +1,99 @@
+// 表单输入框的样式 START
+.hse-form {
+  width: 100%;
+  display: flex;
+  min-width: 700px;
+  position: relative;
+
+  .high-link {
+    margin-left: 10px;
+    color: #026dff;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  .search-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 280px;
+
+    .el-button {
+      width: 100px;
+      height: 36px;
+      border-radius: 4px;
+      font-size: 14px;
+
+      &.el-button--primary {
+        background: #026dff;
+        color: #fff;
+      }
+
+      &.el-button--default {
+        background: #fff;
+        color: #026dff;
+        border: 1px solid #026dff;
+      }
+    }
+  }
+
+  ::v-deep .el-form {
+    flex: 1;
+    margin-right: 290px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+
+    .el-form-item {
+      margin-right: 0 !important;
+      display: flex;
+      flex-direction: row;
+      text-align: left;
+      flex: 0 0 33%;
+      padding-right: 10px;
+      flex-shrink: 0;
+      margin-bottom: 20px;
+
+      .el-form-item__label {
+        width: 74px;
+        //   width: 84px !important;
+        line-height: 36px !important;
+        font-size: 14px;
+        font-weight: 400;
+        color: #606266;
+        padding: 10px 0 0 0 !important;
+        line-height: 18px !important;
+        overflow: hidden;
+        max-height: 40px;
+      }
+
+      .el-form-item__content {
+        flex: 1;
+
+        .el-input {
+          .el-input__inner {
+            height: 36px;
+            width: 100%;
+          }
+        }
+
+        .el-range-editor--small.el-input__inner {
+          height: 36px;
+          width: 100%;
+        }
+
+        .el-select {
+          width: 100%;
+        }
+      }
+
+      .el-form-item__content::before {
+        display: table;
+        content: ""
+      }
+
+    }
+  }
+}

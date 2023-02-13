@@ -1,0 +1,65 @@
+// 去除表头下边框
+.el-table--border th.el-table__cell {
+  border-bottom: none !important;
+}
+
+.el-table th.el-table__cell.is-leaf {
+  border-bottom: none !important;
+}
+
+// 修改级联选择的选项面板，使其根据选项数量自动获取高度
+.el-cascader-menu__wrap.el-scrollbar__wrap {
+  height: auto;
+  max-height: 204px;
+}
+
+// 向右对齐
+.el-table .is-right .cell {
+  text-align: right;
+}
+
+// 分割线
+.crud-divider.el-divider {
+  background: #d3dbea;
+  opacity: 0.5;
+  width: auto;
+  margin: 0;
+}
+
+// 禁用最小值
+.cl-divider.el-row {
+  min-height: 0 !important;
+  padding: 0 !important;
+}
+
+// 修改当前hover的背景色
+.el-table__body tr.hover-row>td.el-table__cell {
+  background-color: #e8f3ff !important;
+}
+
+// 修改当前选中的背景色
+.el-table__body tr.current-row>td.el-table__cell {
+  background-color: #e8f3ff !important;
+}
+
+// 修改级联菜单的滚动条
+.el-cascader-menu__wrap.el-scrollbar__wrap {
+  padding-bottom: 8px !important;
+  overflow: auto !important;
+}
+
+// 第一列左间距20px
+.el-table--border .el-table__cell:first-child .cell {
+  padding-left: 20px !important;
+}
+
+// 最后一列右间距20px
+.el-table--border .el-table__cell:last-child .cell {
+  padding-right: 20px !important;
+}
+
+.el-tooltip__popper.is-dark {
+  font-size: 14px !important;
+  background-color: #4f536b !important;
+  box-shadow: 2px 2px 2px 2px !important;
+}

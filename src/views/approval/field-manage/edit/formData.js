@@ -1,0 +1,87 @@
+export const getFormData = (formVal, isEdit) => {
+  const formData = {
+    list: [
+      {
+        type: "title",
+        flag: 0,
+        icon: "icon-wenzishezhi-",
+        name: "功能信息",
+        options: {
+          width: "100%",
+          defaultValue: "",
+        },
+        key: 1615275642000,
+        model: "title_1615275642000",
+        rules: [],
+      },
+      {
+        type: "input",
+        icon: "icon-input",
+        name: "功能名称",
+        flag: 0,
+        options: {
+          clearable: false,
+          showText: false,
+          width: "200px",
+          defaultValue: "",
+          required: false,
+          dataType: "string",
+          maxlength: "",
+          minlength: "",
+          validator: "",
+          pattern: "",
+          patternTips: "",
+          placeholder: "",
+          disabled: true,
+          hide: false,
+          tipFont: "",
+          mouseTips: "",
+          borderRadius: "no",
+        },
+        key: "domainName",
+        model: "domainName",
+        rules: [],
+      },
+      {
+        type: "title",
+        flag: 0,
+        icon: "icon-wenzishezhi-",
+        name: "条件字段信息",
+        options: {
+          width: "100%",
+          defaultValue: "",
+        },
+        key: 1615276691000,
+        model: "title_1615276691000",
+        rules: [],
+      },
+      {
+        type: "slot",
+        icon: "icon-wenzishezhi-",
+        name: "自定义插槽",
+        flag: 1,
+        options: {
+          width: "100%",
+          slotName: "editTable",
+          defaultValue: "",
+          required: false,
+          validator: "",
+          hideLabel: true,
+        },
+        key: "editTable",
+        model: "editTable",
+        rules: [],
+      },
+    ],
+    config: {
+      id: "form_1615275607000",
+      labelWidth: 130,
+      labelPosition: "right",
+      size: "medium",
+      column: "column",
+      formName: "表单组件",
+    },
+  };
+
+  return formData;
+};

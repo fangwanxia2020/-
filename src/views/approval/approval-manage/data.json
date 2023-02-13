@@ -1,0 +1,55 @@
+{
+  "code": "200",
+  "msg": "success",
+  "data": {
+    "tableId": 1,
+    "workFlowVersionId": "",
+    "workFlowDef": {
+      "name": "",
+      "publicFlag": 1,
+      "sortNo": 5,
+      "duplicateRemovelFlag": 1,
+      "optionTip": "",
+      "optionNotNull": 0,
+      "status": 1
+    },
+    "directorMaxLevel": 4,
+    "flowPermission": [],
+    "nodeConfig": {
+      "nodeId": "sid-startevent",
+      "name": "发起人",
+      "type": "start",
+      "priorityLevel": "",
+      "settype": "",
+      "selectMode": "",
+      "selectRange": "",
+      "examineRoleId": "",
+      "directorLevel": "",
+      "replaceByUp": "",
+      "examineMode": "",
+      "noHanderAction": "",
+      "examineEndType": "",
+      "examineEndRoleId": "",
+      "examineEndDirectorLevel": "",
+      "ccSelfSelectFlag": "",
+      "conditionList": [],
+      "nodeUserList": [],
+      "nodeDeptList": [],
+      "nodePostList": [],
+      "nodeRoleList": [],
+      "childNode": null,
+      "conditionNodes": [],
+      "properties": {
+        "activateType": "OR",
+        "actionerType": "targetAllPerson",
+        "agreeAll": true,
+        "nodeUserList": [],
+        "nodeDeptList": [],
+        "nodePostList": [],
+        "nodeRoleList": [],
+        "workFlowRoleList": [],
+        "noneActionerAction": "admin"
+      }
+    }
+  }
+}
